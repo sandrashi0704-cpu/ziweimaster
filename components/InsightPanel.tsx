@@ -431,37 +431,6 @@ ${selectedSiHua.starName}化${selectedSiHua.siHua}落在【${palaceName}】，�
       </div>
 
       {/* ── Input ── */}
-      <div className="flex-shrink-0 px-3 pb-3 pt-2" style={{ borderTop: '1px solid var(--t-border)' }}>
-        <div className="flex gap-2">
-          <input
-            type="text"
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            onKeyDown={e => e.key === 'Enter' && !e.shiftKey && handleSend()}
-            placeholder="继续追问，如：今年适合换工作吗？"
-            disabled={loading}
-            className="flex-1 rounded-lg px-4 py-3 text-[20px] focus:outline-none transition-colors"
-            style={{
-              background: 'var(--t-card)',
-              border: '1px solid var(--t-border)',
-              color: 'var(--t-text)',
-            }}
-          />
-          <button
-            onClick={handleSend}
-            disabled={loading || !input.trim()}
-            className="px-4 py-3 rounded-lg text-[20px] font-medium transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-            style={{
-              background: 'rgba(212,168,67,0.15)',
-              border: '1px solid rgba(212,168,67,0.25)',
-              color: 'var(--t-gold)',
-            }}
-          >
-            {loading ? '…' : '追问'}
-          </button>
-        </div>
-      </div>
-
-    </div>
+      
   );
 }
