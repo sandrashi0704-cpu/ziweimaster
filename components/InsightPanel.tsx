@@ -429,8 +429,6 @@ ${selectedSiHua.starName}化${selectedSiHua.siHua}落在【${palaceName}】，�
           })}
         </AnimatePresence>
       </div>
-
-      {/* ── Input ── */}
-      
+    </div>
   );
 }
