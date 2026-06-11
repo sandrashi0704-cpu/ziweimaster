@@ -11,7 +11,7 @@ import type { MetadataRoute } from 'next';
 import { ALL_BOOKS } from '@/lib/classics';
 import { getAllKnowledgeRoutes } from '@/lib/seo/knowledge';
 
-const BASE_URL = 'https://wdyziweidoushu666.com';
+const BASE_URL = 'https://localhost:3000';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastmod = new Date('2026-04-28');

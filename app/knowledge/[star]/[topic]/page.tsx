@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ star: str
       title,
       description,
       type: 'article',
-      url: `https://wdyziweidoushu666.com/knowledge/${slug}/${topic}`,
+      url: `https://localhost:3000/knowledge/${slug}/${topic}`,
     },
     alternates: {
       canonical: `https://wdyziweidoushu666.com/knowledge/${slug}/${topic}`,
