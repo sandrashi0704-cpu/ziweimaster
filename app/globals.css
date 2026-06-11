@@ -443,3 +443,17 @@ body {
   body { background: white; color: #1a1a18; }
   @page { margin: 1.2cm; size: A4 landscape; }
 }
+
+
+/* 强制下拉框文字颜色 */
+select, select option {
+  color: #1a1a18 !important;
+  font-weight: 500 !important;
+}
+select option:first-child {
+  color: #1a1a18 !important;
+}
+[data-theme="dark"] select,
+[data-theme="dark"] select option {
+  color: #e8eef6 !important;
+}
