@@ -209,7 +209,7 @@ export default function BirthForm({ onSubmit, loading, initialData, onFormSave, 
       style={{ background: bg, border: `1px solid ${border}`, borderRadius: '24px', padding: '28px', backdropFilter: 'blur(20px)' }}
     >
       {/* 标题 */}
-      <h3 style={{ color: goldText, fontSize: '12px', letterSpacing: '0.4em', textAlign: 'center', marginBottom: '20px', fontWeight: 500 }}>
+      <h3 style={{ color: goldText, fontSize: '15px', letterSpacing: '0.4em', textAlign: 'center', marginBottom: '20px', fontWeight: 500 }}>
         ── 输入生辰八字 ──
       </h3>
 
@@ -446,7 +446,7 @@ export default function BirthForm({ onSubmit, loading, initialData, onFormSave, 
               gap: '8px',
             }}>
               <span style={{ fontSize: '12px', color: summaryClr }}>✓</span>
-              <span style={{ fontSize: '11px', color: summaryClr, letterSpacing: '0.03em', flex: 1 }}>
+              <span style={{ fontSize: '13px', color: summaryClr, letterSpacing: '0.03em', flex: 1 }}>
                 {summaryText}
               </span>
             </div>

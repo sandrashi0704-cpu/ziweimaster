@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
 import StarField from '@/components/StarField';
 import { useTheme, type Theme } from '@/components/ThemeProvider';
-import AnnouncementModal from '@/components/AnnouncementModal';
+
 
 // ─── 滚动入场 wrapper ────────────────────────────────────
 function FadeIn({
@@ -464,10 +464,7 @@ export default function HomePage() {
 
   return (
     <div style={{ background: c.bgBase, transition: 'background 0.35s ease' }} className="overflow-x-hidden">
-      {/* 致用户公告——首次访问全屏覆盖，关闭后才进入首页 */}
-      <AnnouncementModal />
-
-      <StarField />
+      {/* 致用户公告——首次访问全屏覆盖，关闭后才进入首页 */}<StarField />
 
       {/* 全局光晕 */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -604,11 +601,11 @@ export default function HomePage() {
             fontFamily: '"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif',
           }}>
             <div style={{ fontSize: '20px', marginBottom: '6px', lineHeight: 1 }}>🎁</div>
-            <div style={{ fontSize: '13px', lineHeight: 1.7, color: '#8b3a1a', fontWeight: 500 }}>
+            <div style={{ fontSize: '15px', lineHeight: 1.7, color: '#8b3a1a', fontWeight: 500 }}>
               <span style={{ color: '#c45a2d', fontWeight: 700, fontSize: '14px' }}>5/1 — 5/8</span>
               <span> 限时回馈</span>
             </div>
-            <div style={{ fontSize: '13px', lineHeight: 1.7, color: '#8b3a1a', fontWeight: 500 }}>
+            <div style={{ fontSize: '15px', lineHeight: 1.7, color: '#8b3a1a', fontWeight: 500 }}>
               全部功能 + AI 提问
               <strong style={{ color: '#c45a2d' }}> 全免费</strong>
             </div>
@@ -635,11 +632,11 @@ export default function HomePage() {
             textAlign: 'center',
           }}>
             <div style={{ fontSize: '18px', marginBottom: '4px', lineHeight: 1 }}>🎁</div>
-            <div style={{ fontSize: '12px', lineHeight: 1.7, color: '#8b3a1a', fontWeight: 500 }}>
-              <span style={{ color: '#c45a2d', fontWeight: 700, fontSize: '13px' }}>5/1 — 5/8</span>
+            <div style={{ fontSize: '14px', lineHeight: 1.7, color: '#8b3a1a', fontWeight: 500 }}>
+              <span style={{ color: '#c45a2d', fontWeight: 700, fontSize: '15px' }}>5/1 — 5/8</span>
               <span> 限时回馈</span>
             </div>
-            <div style={{ fontSize: '12px', lineHeight: 1.7, color: '#8b3a1a', fontWeight: 500 }}>
+            <div style={{ fontSize: '14px', lineHeight: 1.7, color: '#8b3a1a', fontWeight: 500 }}>
               全部功能 + AI <strong style={{ color: '#c45a2d' }}>全免费</strong>
             </div>
           </div>
@@ -1000,7 +997,7 @@ export default function HomePage() {
                   倪师的讲课视频在 B 站、YouTube 与各大平台广泛流传，是新一代命理与中医爱好者公认的入门必修。
                   他不仅是紫微斗数的传承者，更是把传统命理与中医带入现代知识体系的关键人物之一。
                 </p>
-                <p style={{ fontSize: '11px', color: c.textMuted, fontStyle: 'italic', marginTop: '12px' }}>
+                <p style={{ fontSize: '15px', color: c.textMuted, fontStyle: 'italic', marginTop: '12px' }}>
                   本平台所有解读基于倪师《天纪》公开教学讲义、《紫微斗数全书》明版、传统三合派古籍整理而成，
                   仅作文化与个人成长参考。倪师本人与本平台无任何商业关联。
                 </p>
@@ -1055,7 +1052,7 @@ export default function HomePage() {
               <div className="flex justify-center gap-3 flex-wrap mb-6">
                 {['感情匹配度分析', '合伙创业评估', '亲子缘分解读', '婚前相性评估'].map(item => (
                   <span key={item} style={{
-                    fontSize: '12px', padding: '5px 14px', borderRadius: '20px',
+                    fontSize: '14px', padding: '5px 14px', borderRadius: '20px',
                     background: theme === 'dark' ? 'rgba(212,168,67,0.08)' : 'rgba(212,168,67,0.12)',
                     border: `1px solid ${c.goldLine}`,
                     color: c.goldSolid,
