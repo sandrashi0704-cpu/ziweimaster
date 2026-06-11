@@ -271,6 +271,88 @@ export default function HemingPage() {
           )}
 
           {analyzing && !analysis && (
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '40px 0', color: 'var(--tx-3)', fontSize: '13px' }}>
+              <div style={{
+                width: '14px', height: '14px',
+                border: '2px solid var(--bdr-med)', borderTopColor: 'var(--ac)',
+                borderRadius: '50%', animation: 'spin 0.8s linear infinite',
+              }} />
+              正在对比双方命盘…
+            </div>
+          )}
+
+          {analysis && <AiContent text={analysis} streaming={analyzing} />}
+
+          {analysisError && (
+            <div style={{ padding: '12px 16px', borderRadius: '10px', border: '1px solid var(--bdr)', background: 'var(--bg-card)', fontSize: '13px', color: 'var(--tx-2)', marginTop: '12px' }}>
+              分析暂时不可用，请重试。
+            </div>
+          )}
+        </div>
+
+        {/* ═══ 针对合盘的追问聊天框（仅分析完成后显示）═══════════ */}
+        {analysis && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '16px' }}>
+            <div style={{ fontSize: '11px', letterSpacing: '0.2em', color: 'var(--tx-3)', marginBottom: '4px' }}>
+              针对此次合盘继续追问
+            </div>
+
+            {/* 快捷问题 */}
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              {[
+                '感情匹配度如何？',
+                '适合合伙创业吗？',
+                '两人结婚是否合适？',
+                '哪方面最容易产生矛盾？',
+                '财运是否互补？',
+              ].map(q => (
+                <button
+                  key={q}
+                  onClick={() => { setQuestion(q); runAnalysis(q); }}
+                  disabled={analyzing}
+                  style={{
+                    fontSize: '12px', padding: '6px 14px',
+                    borderRadius: 'var(--r-pill)',
+                    border: '1px solid var(--bdr-med)',
+                    background: 'transparent', color: 'var(--tx-2)',
+                    cursor: analyzing ? 'not-allowed' : 'pointer',
+                    opacity: analyzing ? 0.5 : 1,
+                    transition: 'border-color 0.15s',
+                  }}
+                  onMouseEnter={e => { if (!analyzing) (e.currentTarget as HTMLElement).style.borderColor = 'var(--ac-bdr)'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--bdr-med)'; }}
+                >
+                  {q}
+                </button>
+              ))}
+            </div>
+
+            {/* 输入框 + 追问按钮 */}
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <input
+                type="text"
+                value={question}
+                onChange={e => setQuestion(e.target.value)}
+                onKeyDown={e => { if (e.key === 'Enter' && !analyzing) runAnalysis(question || undefined); }}
+                placeholder="继续追问，如：哪几年是两人感情关键期？"
+                disabled={analyzing}
+                className="input-base"
+                style={{ fontSize: '13px', flex: 1 }}
+              />
+              <button
+                onClick={() => runAnalysis(question || undefined)}
+                disabled={analyzing}
+                style={{
+                  padding: '10px 20px', borderRadius: 'var(--r-sm)', border: 'none',
+                  background: analyzing ? 'var(--bg-2)' : 'var(--tx-0)',
+                  color: analyzing ? 'var(--tx-3)' : 'white',
+                  fontSize: '13px', fontWeight: 500,
+                  cursor: analyzing ? 'not-allowed' : 'pointer',
+                  transition: 'all 0.15s', whiteSpace: 'nowrap',
+                }}
+              >
+                {analyzing ? '分析中…' : '继续追问'}
+              </button>
             </div>
           </div>
         )}
