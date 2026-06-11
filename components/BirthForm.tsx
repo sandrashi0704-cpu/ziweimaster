@@ -209,7 +209,7 @@ export default function BirthForm({ onSubmit, loading, initialData, onFormSave, 
       style={{ background: bg, border: `1px solid ${border}`, borderRadius: '24px', padding: '28px', backdropFilter: 'blur(20px)' }}
     >
       {/* 标题 */}
-      <h3 style={{ color: goldText, fontSize: '15px', letterSpacing: '0.4em', textAlign: 'center', marginBottom: '20px', fontWeight: 500 }}>
+      <h3 style={{ color: goldText, fontSize: '17px', letterSpacing: '0.3em', textAlign: 'center', marginBottom: '20px', fontWeight: 500 }}>
         ── 输入生辰八字 ──
       </h3>
 
@@ -325,7 +325,7 @@ export default function BirthForm({ onSubmit, loading, initialData, onFormSave, 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              style={{ fontSize: '10px', color: isDark ? 'rgba(180,210,235,0.85)' : 'rgba(100,70,10,0.5)', marginTop: '5px' }}
+              style={{ fontSize: '12px', color: isDark ? 'rgba(180,210,235,0.85)' : 'rgba(100,70,10,0.5)', marginTop: '5px' }}
             >
               {form.city || '（请选择城市）'} · 经度 {form.longitude.toFixed(1)}°E · 时差 {offsetMin > 0 ? '+' : ''}{offsetMin} 分钟
             </motion.p>
@@ -446,7 +446,7 @@ export default function BirthForm({ onSubmit, loading, initialData, onFormSave, 
               gap: '8px',
             }}>
               <span style={{ fontSize: '12px', color: summaryClr }}>✓</span>
-              <span style={{ fontSize: '13px', color: summaryClr, letterSpacing: '0.03em', flex: 1 }}>
+              <span style={{ fontSize: '14px', color: summaryClr, letterSpacing: '0.03em', flex: 1 }}>
                 {summaryText}
               </span>
             </div>
@@ -462,7 +462,7 @@ export default function BirthForm({ onSubmit, loading, initialData, onFormSave, 
         whileTap={loading ? {} : { scale: 0.98 }}
         style={{
           width: '100%',
-          padding: '14px',
+          padding: '16px',
           borderRadius: '16px',
           fontSize: '13px',
           fontWeight: 600,
