@@ -96,7 +96,7 @@ export default function ChartSummary({ chart }: ChartSummaryProps) {
           </div>
         </div>
 
-        <div className="mt-4 pt-3 flex flex-wrap gap-x-4 gap-y-1 text-[10px]"
+        <div className="mt-4 pt-3 flex flex-wrap gap-x-4 gap-y-1 text-[15px]"
           style={{ borderTop: '1px solid var(--t-border)', color: 'var(--t-faint)' }}>
           <span>公历 {chart.birthInfo.year}-{chart.birthInfo.month}-{chart.birthInfo.day}</span>
           <span>
@@ -132,7 +132,7 @@ export default function ChartSummary({ chart }: ChartSummaryProps) {
               const c = colors[siHua] || colors['禄'];
               return (
                 <div key={name + siHua}
-                  className="flex items-center justify-between px-3 py-2 rounded-lg text-[10px]"
+                  className="flex items-center justify-between px-3 py-2 rounded-lg text-[15px]"
                   style={{ background: c.bg, border: `1px solid ${c.border}`, color: c.text }}
                 >
                   <span className="font-medium">{name}</span>

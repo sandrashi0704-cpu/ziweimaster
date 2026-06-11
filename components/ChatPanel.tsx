@@ -117,7 +117,7 @@ export default function ChatPanel({ chart }: ChatPanelProps) {
               className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               <div
-                className="max-w-[85%] rounded-xl px-3.5 py-2.5 text-sm leading-relaxed"
+                className="max-w-[85%] rounded-xl px-3.5 py-2.5 text-lg leading-relaxed"
                 style={msg.role === 'user' ? {
                   background: 'rgba(212,168,67,0.1)',
                   border: '1px solid rgba(212,168,67,0.2)',
@@ -131,7 +131,7 @@ export default function ChatPanel({ chart }: ChatPanelProps) {
                 {msg.role === 'assistant' && (
                   <div className="text-[10px] mb-1" style={{ color: 'var(--t-faint)' }}>命理师 ·</div>
                 )}
-                <div className="whitespace-pre-wrap text-xs leading-relaxed">
+                <div className="whitespace-pre-wrap text-base leading-relaxed">
                   {msg.content}
                   {loading && i === messages.length - 1 && msg.role === 'assistant' && (
                     <span className="inline-block w-1.5 h-3 ml-0.5 animate-pulse" style={{ background: 'var(--t-gold)', opacity: 0.6 }} />
@@ -152,7 +152,7 @@ export default function ChatPanel({ chart }: ChatPanelProps) {
                 key={i}
                 onClick={() => sendMessage(q)}
                 disabled={loading}
-                className="text-left text-[10px] rounded-lg px-2.5 py-2 transition-all line-clamp-2"
+                className="text-left text-[15px] rounded-lg px-2.5 py-2 transition-all line-clamp-2"
                 style={{
                   color: 'var(--t-text2)',
                   border: '1px solid var(--t-border)',
@@ -184,7 +184,7 @@ export default function ChatPanel({ chart }: ChatPanelProps) {
             onKeyDown={e => e.key === 'Enter' && !e.shiftKey && sendMessage(input)}
             placeholder="输入问题，如：我的感情运势如何？"
             disabled={loading}
-            className="flex-1 rounded-lg px-3 py-2 text-xs focus:outline-none transition-colors"
+            className="flex-1 rounded-lg px-3 py-2 text-base focus:outline-none transition-colors"
             style={{
               background: 'var(--t-card)',
               border: '1px solid var(--t-border)',
@@ -194,7 +194,7 @@ export default function ChatPanel({ chart }: ChatPanelProps) {
           <button
             onClick={() => sendMessage(input)}
             disabled={loading || !input.trim()}
-            className="px-3 py-2 rounded-lg text-xs font-medium transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+            className="px-3 py-2 rounded-lg text-base font-medium transition-all disabled:opacity-30 disabled:cursor-not-allowed"
             style={{
               background: 'rgba(212,168,67,0.15)',
               border: '1px solid rgba(212,168,67,0.25)',
