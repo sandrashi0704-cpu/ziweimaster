@@ -81,8 +81,10 @@ function analyzeCompatibility(a: ZiweiChart, b: ZiweiChart, question: string): s
       lines.push('双方夫妻宫主星相同，感情观念有共鸣，但也可能有相同的盲点。');
     }
     const peachStars = ['贪狼','廉贞','太阴'];
-    const aPeach = a.stars.some(s => peachStars.includes(s.name));
-    const bPeach = b.stars.some(s => peachStars.includes(s.name));
+    const allStarsA = a.palaces.flatMap(p => p.stars);
+    const allStarsB = b.palaces.flatMap(p => p.stars);
+    const aPeach = allStarsA.some(s => peachStars.includes(s.name));
+    const bPeach = allStarsB.some(s => peachStars.includes(s.name));
     if (aPeach && bPeach) lines.push('双方命宫均带桃花星，互相吸引力强，但需注意感情稳定性。');
     const shaStars = ['擎羊','陀罗','火星','铃星'];
     const aSha = (c1?.stars || []).some(s => shaStars.includes(s.name));
